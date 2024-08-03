@@ -1,0 +1,335 @@
+<html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>duplicate-delite</title>
+</head>
+<body>
+<input type="password"id="PlaceText">
+<input type="button" value="PlaceScan" id="checkButtonPlace">
+<input type="button" value="取り消し" id="checkButtonDelite">
+<input type="password"id="CardText"  disabled="disabled">
+<input type="button" value="CardScan" id="checkButtonCard"  disabled="disabled">
+<input type="button" value="確定" id="checkButtonDone"  disabled="disabled">
+<input type="button" value="重複探索" id="checkButtonDuplicate"  disabled="disabled">
+<input type="button" value="シャッフル" id="checkButtonRandom"  disabled="disabled">
+<input type="button" value="リセット" id="checkButtonReset">
+<!-- コメント -->
+<p id="msg"></p><br>
+<!-- カード -->
+<img id="01Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="02Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="03Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="04Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="05Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="06Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="07Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="08Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="09Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="10Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="11Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="12Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="13Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="14Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="15Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="16Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="17Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="18Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="19Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="20Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="21Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="22Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="23Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="24Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="25Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="26Place" width=34 height=55 src="./Trump/表示用/none.jpg"> 
+<img id="27Place" width=34 height=55 src="./Trump/表示用/none.jpg">
+<br>
+<!-- カーソル-->
+<img id="01PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="02PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="03PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="04PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="05PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="06PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="07PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="08PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="09PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="10PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="11PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="12PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="13PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="14PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="15PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="16PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="17PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="18PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="19PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="20PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="21PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="22PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="23PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="24PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="25PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="26PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg"> 
+<img id="27PlaceChoice" width=34 height=11 src="./Trump/表示用/pick-none.jpg">
+      
+<script>
+//
+const placeCard = ["01Place","07Place","13Place","19Place","25Place","02Place","08Place","14Place","20Place","26Place","03Place","09Place","15Place","21Place","27Place","04Place","10Place","16Place","22Place","05Place","11Place","17Place","23Place","06Place","12Place","18Place","24Place"] 
+const Card = ["Club01","ClubK","Dia10","Heart08","Spade04","Club02","ClubQ","DiaJ","Heart09","Spade05","Club03","Dia01","DiaK","Heart10","Spade06","Club04","Dia02","DiaQ","HeartJ","Spade07","Club05","Dia03","Heart01","HeartK","Spade08","Club06","Dia04","Heart02","HeartQ","Spade09","Club07","Dia05","Heart03","Joker01","Spade10","Club08","Dia06","Heart04","Joker02","SpadeJ","Club09","Dia07","Heart05","Spade01","SpadeK","Club10","Dia08","Heart06","Spade02","SpadeQ","ClubJ","Dia09","Heart07","Spade03"]
+
+var position = {"01Place":"Nu","02Place":"Nu","03Place":"Nu","04Place":"Nu","05Place":"Nu","06Place":"Nu","07Place":"Nu","08Place":"Nu","09Place":"Nu","10Place":"Nu","11Place":"Nu","12Place":"Nu","13Place":"Nu","14Place":"Nu","15Place":"Nu","16Place":"Nu","17Place":"Nu","18Place":"Nu","19Place":"Nu","20Place":"Nu","21Place":"Nu","22Place":"Nu","23Place":"Nu","24Place":"Nu","25Place":"Nu","26Place":"Nu","27Place":"Nu"};
+        
+function butotnClickPlace(){
+  if (placeCard.includes(PlaceText.value)){document.getElementById(PlaceText.value).src = "./Trump/表示用/choice.jpg";msg.innerText =  '次はカードを読み込んでください。';
+  document.getElementById("PlaceText").disabled = true;
+  document.getElementById("checkButtonPlace").disabled = true;
+  document.getElementById("CardText").disabled = false;
+  document.getElementById("checkButtonCard").disabled = false;}
+        
+  else {msg.innerText =  'まずは位置カードを読み込んでください。';
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;
+  document.getElementById("PlaceText").disabled = false;
+  document.getElementById("checkButtonPlace").disabled = false}
+}
+
+let msg = document.getElementById('msg');
+
+let checkButtonPlace = document.getElementById('checkButtonPlace');
+checkButtonPlace.addEventListener('click', butotnClickPlace);
+let PlaceText = document.getElementById('PlaceText');
+PlaceText.value = '';
+
+function butotnClickDelite(){
+  if (placeCard.includes(PlaceText.value)){
+  document.getElementById(PlaceText.value).src = "./Trump/表示用/none.jpg";
+  msg.innerText =  '取り消しました。';
+  document.getElementById("PlaceText").disabled = false;
+  document.getElementById("checkButtonPlace").disabled = false;
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;
+  PlaceText.value = '';}
+        
+  else {msg.innerText =  '取り消したい場所の位置カード読み込むか、リセットしてください。';
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;}
+  }
+        
+let checkButtonDelite = document.getElementById('checkButtonDelite');
+checkButtonDelite.addEventListener('click', butotnClickDelite);
+
+function butotnClickCard(){
+  if (Card.includes(CardText.value)){
+  document.getElementById(PlaceText.value).src = "./Trump/表示用/back.jpg";
+
+  var IndexNum=PlaceText.value;
+  position[IndexNum] =CardText.value;
+
+  msg.innerText =  'トランプをセットしました。';
+  document.getElementById("PlaceText").disabled = false;
+  document.getElementById("checkButtonPlace").disabled = false;
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true
+  document.getElementById("checkButtonDone").disabled = false
+  document.getElementById("checkButtonDuplicate").disabled = true;
+  PlaceText.value = '';
+  CardText.value = '';}
+        
+  else {msg.innerText =  'トランプを読み込んでください。';
+  document.getElementById("CardText").disabled = false;
+  document.getElementById("checkButtonCard").disabled = false;}
+  }
+        
+let checkButtonCard = document.getElementById('checkButtonCard');
+checkButtonCard.addEventListener('click', butotnClickCard);
+
+function butotnClickDone(){
+  msg.innerText =  '確定しました。重複削除に進んでください';
+  document.getElementById("PlaceText").disabled = true;
+  document.getElementById("checkButtonPlace").disabled = true;
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;
+  document.getElementById("checkButtonDuplicate").disabled = false;}
+
+let checkButtonDone = document.getElementById('checkButtonDone');
+checkButtonDone.addEventListener('click', butotnClickDone);
+    
+        
+
+        
+function butotnClickDuplicate(){
+  var DoneFlag=0
+  document.getElementById("01PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("02PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("03PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("04PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("05PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("06PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("07PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("08PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("09PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("10PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("11PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("12PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("13PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("14PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("15PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("16PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("17PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("18PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("19PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("20PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("21PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("22PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("23PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("24PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("25PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("26PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("27PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  <!-- 重複を消す-->
+  for (var k in position) {
+        for (var l in position){
+        if (k!=l){
+         <!-- 先方Nuなら探索終了-->
+          if (position[k]!="Nu"){
+        <!-- 先方Jokerなら先に-->
+          if (position[k]=="Joker01"){
+            if (position[l]=="Joker02"){
+              document.getElementById(k).src = "./Trump/表示用/Joker01.jpg";
+              document.getElementById(l).src = "./Trump/表示用/Joker02.jpg";
+              document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+              document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+              position[k] ="Nu";
+              position[l] ="Nu";
+            }
+          }else if (position[k]=="Joker02"){
+            if (position[l]=="Joker01"){
+              document.getElementById(k).src = "./Trump/表示用/Joker02.jpg";
+              document.getElementById(l).src = "./Trump/表示用/Joker01.jpg";
+              document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+              document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+              position[k] ="Nu";
+              position[l] ="Nu";
+            }
+        }
+        <!-- それ以外-->
+        else if (position[k].substr(-2,2)==position[l].substr(-2,2)){
+            document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
+            document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
+            document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+            document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+            position[k] ="Nu";
+            position[l] ="Nu";}
+        }
+        
+        }
+    }
+  }
+  msg.innerText =  "終了しました。";
+  document.getElementById("checkButtonRandom").disabled = false;
+}
+
+
+let checkButtonDuplicate = document.getElementById('checkButtonDuplicate');
+checkButtonDuplicate.addEventListener('click', butotnClickDuplicate);
+
+function butotnClickRandom(){
+<!-- カードをはけさせる-->
+  var NowPlace=[]
+  for (var k in position) {
+    if (position[k]=="Nu"){
+        document.getElementById(k).src = "./Trump/表示用/none.jpg";}
+    else{
+        NowPlace.push(k);}
+    document.getElementById(k+"Choice").src = "./Trump/表示用/pick-none.jpg";
+    }
+    
+<!-- 選ぶ-->
+  var num = Math.floor(Math.random() * NowPlace.length);
+  document.getElementById(NowPlace[num]+"Choice").src = "./Trump/表示用/pick.jpg";
+  msg.innerText =  'ランダムに選びました。';
+  document.getElementById("PlaceText").disabled = true;
+  document.getElementById("checkButtonPlace").disabled = true;
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;
+  document.getElementById("checkButtonDuplicate").disabled = true;}
+
+let checkButtonRandom = document.getElementById('checkButtonRandom');
+checkButtonRandom.addEventListener('click', butotnClickRandom);
+        
+function butotnClickReset(){
+  document.getElementById("01Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("02Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("03Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("04Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("05Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("06Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("07Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("08Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("09Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("10Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("11Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("12Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("13Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("14Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("15Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("16Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("17Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("18Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("19Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("20Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("21Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("22Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("23Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("24Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("25Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("26Place").src = "./Trump/表示用/none.jpg";
+  document.getElementById("27Place").src = "./Trump/表示用/none.jpg";
+  
+  document.getElementById("01PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("02PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("03PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("04PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("05PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("06PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("07PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("08PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("09PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("10PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("11PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("12PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("13PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("14PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("15PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("16PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("17PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("18PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("19PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("20PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("21PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("22PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("23PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("24PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("25PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("26PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  document.getElementById("27PlaceChoice").src = "./Trump/表示用/pick-none.jpg";
+  
+  document.getElementById("CardText").disabled = true;
+  document.getElementById("checkButtonCard").disabled = true;
+  document.getElementById("checkButtonDone").disabled = true;
+  document.getElementById("checkButtonDuplicate").disabled = true;
+  document.getElementById("checkButtonRandom").disabled = true;
+  var position = {"01Place":"Nu","02Place":"Nu","03Place":"Nu","04Place":"Nu","05Place":"Nu","06Place":"Nu","07Place":"Nu","08Place":"Nu","09Place":"Nu","10Place":"Nu","11Place":"Nu","12Place":"Nu","13Place":"Nu","14Place":"Nu","15Place":"Nu","16Place":"Nu","17Place":"Nu","18Place":"Nu","19Place":"Nu","20Place":"Nu","21Place":"Nu","22Place":"Nu","23Place":"Nu","24Place":"Nu","25Place":"Nu","26Place":"Nu","27Place":"Nu"};
+  PlaceText.value = '';
+  CardText.value = '';
+  msg.innerText =  '';
+}
+let checkButtonReset = document.getElementById('checkButtonReset');
+checkButtonReset.addEventListener('click',butotnClickReset);
+
+</script>
+</body>
+<html/>
+

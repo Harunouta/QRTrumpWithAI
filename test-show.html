@@ -1,0 +1,32 @@
+<html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<title>test-show</title>
+</head>
+<body>
+<input type="password"id="nameText">
+<input type="button" value="Check" id="checkButton">
+<p id="msg"></p>
+<script>
+function butotnClick(){
+  const placeCard = ["01Place","07Place","13Place","19Place","25Place","02Place","08Place","14Place","20Place","26Place","03Place","09Place","15Place","21Place","27Place","04Place","10Place","16Place","22Place","05Place","11Place","17Place","23Place","06Place","12Place","18Place","24Place"]
+  const Card = ["Club01","ClubK","Dia10","Heart08","Spade04","Club02","ClubQ","DiaJ","Heart09","Spade05","Club03","Dia01","DiaK","Heart10","Spade06","Club04","Dia02","DiaQ","HeartJ","Spade07","Club05","Dia03","Heart01","HeartK","Spade08","Club06","Dia04","Heart02","HeartQ","Spade09","Club07","Dia05","Heart03","Joker01","Spade10","Club08","Dia06","Heart04","Joker02","SpadeJ","Club09","Dia07","Heart05","Spade01","SpadeK","Club10","Dia08","Heart06","Spade02","SpadeQ","ClubJ","Dia09","Heart07","Spade03"]
+  if (placeCard.includes(nameText.value)){let b = '<img src = ./Trump/表示用/back.jpg>';
+  document.getElementById("msg").innerHTML = b;}
+  else if (Card.includes(nameText.value)){let b = '<img src = ./Trump/表示用/'+nameText.value+'.jpg>';
+  document.getElementById("msg").innerHTML = b;}
+  else {msg.innerText = nameText.value + 'というカードはありません。';}
+  
+}
+
+let nameText = document.getElementById('nameText');
+nameText.value = '';
+let msg = document.getElementById('msg');
+
+let checkButton = document.getElementById('checkButton');
+checkButton.addEventListener('click', butotnClick);
+</script>
+</body>
+<html/>
+
