@@ -80,7 +80,9 @@ const placeCard = ["01Place","07Place","13Place","19Place","25Place","02Place","
 const Card = ["Club01","ClubK","Dia10","Heart08","Spade04","Club02","ClubQ","DiaJ","Heart09","Spade05","Club03","Dia01","DiaK","Heart10","Spade06","Club04","Dia02","DiaQ","HeartJ","Spade07","Club05","Dia03","Heart01","HeartK","Spade08","Club06","Dia04","Heart02","HeartQ","Spade09","Club07","Dia05","Heart03","Joker01","Spade10","Club08","Dia06","Heart04","Joker02","SpadeJ","Club09","Dia07","Heart05","Spade01","SpadeK","Club10","Dia08","Heart06","Spade02","SpadeQ","ClubJ","Dia09","Heart07","Spade03"]
 
 var position = {"01Place":"Nu","02Place":"Nu","03Place":"Nu","04Place":"Nu","05Place":"Nu","06Place":"Nu","07Place":"Nu","08Place":"Nu","09Place":"Nu","10Place":"Nu","11Place":"Nu","12Place":"Nu","13Place":"Nu","14Place":"Nu","15Place":"Nu","16Place":"Nu","17Place":"Nu","18Place":"Nu","19Place":"Nu","20Place":"Nu","21Place":"Nu","22Place":"Nu","23Place":"Nu","24Place":"Nu","25Place":"Nu","26Place":"Nu","27Place":"Nu"};
-        
+
+const JQK = ["J", "Q", "K"];
+
 function butotnClickPlace(){
   if (placeCard.includes(PlaceText.value)){document.getElementById(PlaceText.value).src = "./Trump/表示用/choice.jpg";msg.innerText =  '次はカードを読み込んでください。';
   document.getElementById("PlaceText").disabled = true;
@@ -214,7 +216,17 @@ function butotnClickDuplicate(){
               position[l] ="Nu";
             }
         }
-        <!-- それ以外-->
+        <!-- JQK-->
+        else if (JQK.indexOf(position[k].substr(-1,1))){
+            if (position[k].substr(-1,1)==position[l].substr(-1,1)){
+              document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
+              document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
+              document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+              document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+              position[k] ="Nu";
+              position[l] ="Nu";}
+        }
+        <!-- JQK以外-->
         else if (position[k].substr(-2,2)==position[l].substr(-2,2)){
             document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
             document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
