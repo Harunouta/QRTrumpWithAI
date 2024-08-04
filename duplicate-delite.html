@@ -206,7 +206,8 @@ function butotnClickDuplicate(){
               position[k] ="Nu";
               position[l] ="Nu";
             }
-          }else if (position[k]=="Joker02"){
+          }
+          else if (position[k]=="Joker02"){
             if (position[l]=="Joker01"){
               document.getElementById(k).src = "./Trump/表示用/Joker02.jpg";
               document.getElementById(l).src = "./Trump/表示用/Joker01.jpg";
@@ -217,7 +218,25 @@ function butotnClickDuplicate(){
             }
         }
         <!-- JQK-->
-        else if (JQK.indexOf(position[k].substr(-1,1))){
+        else if (position[k].substr(-1,1)=="J"){
+            if (position[k].substr(-1,1)==position[l].substr(-1,1)){
+              document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
+              document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
+              document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+              document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+              position[k] ="Nu";
+              position[l] ="Nu";}
+        }
+        else if (position[k].substr(-1,1)=="Q"){
+            if (position[k].substr(-1,1)==position[l].substr(-1,1)){
+              document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
+              document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
+              document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
+              document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
+              position[k] ="Nu";
+              position[l] ="Nu";}
+        }
+        else if (position[k].substr(-1,1)=="K"){
             if (position[k].substr(-1,1)==position[l].substr(-1,1)){
               document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
               document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
