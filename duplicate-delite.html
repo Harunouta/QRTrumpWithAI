@@ -247,12 +247,18 @@ function butotnClickDuplicate(){
         }
         <!-- JQK以外-->
         else if (position[k].substr(-2,2)==position[l].substr(-2,2)){
+          if (position[l]=="Joker01"){
+              }
+          else if (position[l]=="Joker02"){
+              }
+          else{
             document.getElementById(k).src = "./Trump/表示用/"+position[k]+".jpg";
             document.getElementById(l).src = "./Trump/表示用/"+position[l]+".jpg";
             document.getElementById(k+"Choice").src = "./Trump/表示用/pick.jpg";
             document.getElementById(l+"Choice").src = "./Trump/表示用/pick.jpg";
             position[k] ="Nu";
             position[l] ="Nu";}
+            }
         }
         
         }
